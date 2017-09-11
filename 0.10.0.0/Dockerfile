@@ -41,8 +41,8 @@ EXPOSE ${CONNECT_PORT}
 # Run
 
 WORKDIR $KAFKA_HOME
-COPY start-connect.sh $KAFKA_HOME/start-connect.sh
-COPY docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
+COPY start-connect $KAFKA_HOME
+COPY docker-entrypoint /
+ENTRYPOINT ["/docker-entrypoint"]
 
-CMD ["./start-connect.sh"]
+CMD ["./start-connect"]
